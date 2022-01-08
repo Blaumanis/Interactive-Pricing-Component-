@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope&display=swap');
+@import 'config';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background: url('/images/bg-pattern.svg');
+    background-position: top;
+    background-repeat: no-repeat;
+    background-color: $veryPaleBlue;
+    font-family: 'Manrope', sans-serif;
+}
+
+.main-text{
+    position: relative;
+
+    img{
+        position: absolute;
+        top: -3.4rem;
+        left: 25%;
+    }
+    h1{
+        color: $darkDesaturatedBlue;
+    }
+    small{
+        color: $grayishBlue; 
+    }
+}
+
+
+.container{
+    background-color: $white;
+    width: 500px;
+    border-radius: 0.5rem;
+    margin: 5rem 1rem;
+    padding: 2rem 0;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    
+
+    .heading{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 1rem;
+
+        .pageviews{
+            color: $grayishBlue;
+            font-weight: bold;
+        }
+
+        .price{
+            color: black;
+            font-weight: bold;
+            font-size: 1.5rem;
+
+            small{
+                font-weight: normal;
+                font-size: 0.9rem;
+                padding-left: 0.2rem;
+                color: $grayishBlue;
+            }
+        }
+
+    }
+    .input-container{
+        margin: 2rem 0;
+        padding: 0 1rem;
+
+        .range{
+            -webkit-appearance: none;  /* Override default CSS styles */
+            appearance: none;
+            width: 100%; /* Full-width */
+            height: .5rem; /* Specified height */
+            background: #ccc; /* Grey background */
+            outline: none; /* Remove outline */
+            opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+            color: $strongCyan;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: 0.3s ease-out;
+        }
+        .range:hover{
+            opacity: 1;
+        }
+        .range::-webkit-slider-thumb {
+            -webkit-appearance: none; /* Override default look */
+            appearance: none;
+            width: 25px; /* Set a specific slider handle width */
+            height: 25px; /* Slider handle height */
+            background-color: $strongCyan; /* Green background */
+            cursor: pointer; /* Cursor on hover */
+            border-radius: 50%;
+            box-shadow: 2px 2px 5px $strongCyan;
+            position: relative;
+          }
+    }
+        
+    .toggle-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        padding: 0 1rem;
+
+          .monthly-billing{
+            color: $grayishBlue;
+          }
+          .switch {
+            position: relative;
+            display: inline-block;
+            width: 48px;
+            height: 24px;
+          }
+          
+          /* Hide default HTML checkbox */
+          .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+          }
+          
+          /* The slider */
+          .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+          }
+          
+          .slider:before {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+          }
+          
+          input:checked + .slider {
+            background-color: $strongCyan;
+          }
+          
+          input:focus + .slider {
+            box-shadow: 0 0 1px $strongCyan;
+          }
+          
+          input:checked + .slider:before {
+            -webkit-transform: translateX(24px);
+            -ms-transform: translateX(24px);
+            transform: translateX(24px);
+          }
+          
+          /* Rounded sliders */
+          .slider.round {
+            border-radius: 34px;
+          }
+          
+          .slider.round:before {
+            border-radius: 50%;
+          }
+          .year-billing{
+              color: $grayishBlue;
+
+              strong{
+                  color: $lightRed;
+                  background-color: $lightGrayishRed;
+                  padding: 0.25rem;
+                  border-radius: 0.5rem;
+              }
+          }
+    }  
+    .divider{
+        margin: 1rem 0;
+        width: 100%;
+        background-color: rgba(221, 221, 221, 0.555);
+        height: 1px;
+    }
+    .trial-container{
+        padding: 0 1rem;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        ul{
+            list-style: none;
+
+            li{
+                padding-bottom: 0.5rem;
+                color: $grayishBlue;
+            }
+            li::before{
+                content: "✓";
+                color: $strongCyan;
+                padding-right: 0.5rem;
+                font-weight: bold;
+            }
+        }
+    .trial-btn{
+       background-color: $darkDesaturatedBlue;
+       color: $lightGrayishBlue; 
+       border: none;
+       font-family: inherit;
+       font-size: 1.3rem;
+       padding: 0.33rem 1rem;
+       border-radius: 1rem;
+       cursor: pointer;
+       transition: 0.5s linear;
+    }  
+    .trial-btn:hover{
+        color: $darkDesaturatedBlue;
+        background-color: $lightGrayishBlue;
+    }
+
+    }
+}
+
+@media (max-width: 550px) {
+    .container{
+        width: 400px;
+        position: relative;
+
+        .heading{
+            flex-direction: column;
+
+            .price{
+                position: absolute;
+                top: 7rem;
+                padding-top: 1rem;
+            }
+        }
+        
+        .toggle-container{
+            margin: 0;
+            padding-top: 3rem;
+
+            strong{
+                display: none;
+            }
+            .year-billing::after{
+                content: "-25%";
+                color: $lightRed;
+                background-color: $lightGrayishRed;
+                padding: 0.25rem;
+                border-radius: 0.5rem;
+            }
+        }
+
+        .trial-container{
+            flex-direction: column;
+            justify-content: center;
+            gap: 1rem;
+
+        }
+    }
+}
+
+
